@@ -63,7 +63,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git fetch --tags --force
-          if (git rev-parse "refs/tags/${{ steps.release.outputs.tag }}" -q --verify) {
+          $existing = git tag -l "${{ steps.release.outputs.tag }}"
+          if ($existing.Trim() -eq "${{ steps.release.outputs.tag }}") {
             throw "Tag ${{ steps.release.outputs.tag }} already exists."
           }
           git tag "${{ steps.release.outputs.tag }}" "${{ github.sha }}"
