@@ -1,5 +1,8 @@
+#ifndef AppVersion
+  #define AppVersion "1.0.0"
+#endif
+
 #define AppName "Upscaller"
-#define AppVersion "1.0.0"
 #define AppPublisher "medelamsia"
 #define AppExeName "Upscaller.exe"
 
