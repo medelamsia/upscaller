@@ -1,1 +1,2 @@
-numpy>=2.0,<3
+# No third-party runtime dependencies.
+# Tkinter is included with the official Windows Python distribution.
